@@ -17,3 +17,43 @@ int main()
 }
 
 
+//收件人列表
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int n;
+	while (cin >> n){
+		cin.get();
+		string name;
+		for (int i = 0; i < n; i++)
+		{
+			bool quote = false;
+			getline(cin, name);
+			if (name.find(',') != string::npos || name.find(' ') != string::npos)
+			{
+				quote = true;
+			}
+			if (quote){
+				printf("\"");
+			}
+
+			printf("%s", name.c_str());
+
+			if (quote){
+				printf("\"");
+			}
+
+			if (i == n - 1){
+				printf("\n");
+			}
+			else{
+				printf(", ");
+			}
+		}
+	}
+
+}
