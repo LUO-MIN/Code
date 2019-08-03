@@ -9,7 +9,7 @@ public:
     
     /** Push element x onto stack. */
     void push(int x) {
-        
+        //先将数据都插入到不为空的队列里，保证数据都插入到同一个队列里
         if(q1.empty())
         {
             q2.push(x);
@@ -24,11 +24,13 @@ public:
         if(q1.empty())
         {
             int len = q2.size();
+			//除了q2中的最后一个元素，其他的都push到q1中
             for(int i=0;i<len-1;i++)
             {
                 q1.push(q2.front());
                 q2.pop();
             }
+			//将q2的最后一个元素pop()
             int a=q2.front();
             q2.pop();
             return a;
@@ -57,7 +59,7 @@ public:
                 q2.pop();
             }
             int a=q2.front();
-            q1.push(q2.front());
+            q1.push(q2.front());//目的:为了将所有元素都放到同一队列里
             q2.pop();
             return a;
         }
