@@ -4,7 +4,6 @@
 #include <unordered_map>
 #include <utility>
 #include "Log.hpp"
-#include "Player.hpp"
 #include <pthread.h>
 
 #define DEFAUIT_ID 10000
